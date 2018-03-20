@@ -17,12 +17,12 @@ build:
 push-release:
   steps:
     - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
-        repository: $DOCKER_REPO
-        registry: $DOCKER_REGISTRY
+        username: napersox2
+        password: pass1234
+        repository: napersox2/twitter-feed
+        registry: https://registry.hub.docker.com/v2
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
-        ports: $PORT
-        env: PORT=$PORT
+        ports: 8080
+        env: PORT=8080
         cmd: sh target/bin/start
